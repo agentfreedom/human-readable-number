@@ -4,5 +4,7 @@ module.exports = function toReadable (number) {
 
     if (number < 20) { 
         return num[number];
+    } else if (number < 100) {
+        return tens[~~(number/10)-2] + (digit? " " + num[digit]: "");
     }
 }
