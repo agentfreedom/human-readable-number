@@ -8,5 +8,7 @@ module.exports = function toReadable (number) {
         return tens[~~(number/10)-2] + (digit? " " + num[digit]: "");
     } else if (number < 1000) {
         return num[~~(number/100)] +" hundred" + (number%100 == 0? "": " " + toReadable(number%100));
+    } else {
+        return toReadable(~~(number/1000)) + " thousand" + (number%1000 != 0? " " + toReadable(number%1000): "");
     }
 }
